@@ -6,10 +6,6 @@ export function useCart() {
   const page = usePage();
   const cartItems = ref(page.props.cartItems || []);
 
-  console.log(page.props)
-
-  console.log(cartItems.value) // works fine
-
   const addToCart = async (product) => {
     try {
       const response = await axios.post('/api/cart/add', { productId: product.id });
